@@ -69,6 +69,21 @@ npm run build
 
 The production-ready files will be in the `dist` directory.
 
+## Deployment
+
+### Deploying to Vercel
+
+1. Connect your GitHub repository to Vercel
+2. The `vercel.json` configuration file handles client-side routing automatically
+3. All routes are redirected to `index.html` for proper React Router functionality
+
+The app is already configured with:
+
+- `vercel.json` - Routes configuration for SPA (Single Page Application)
+- `public/_redirects` - Fallback configuration for routing
+
+This ensures that accessing any route (including `/about`, `/contact`, or invalid routes) properly displays the 404 page instead of a server error.
+
 ## Project Structure
 
 ```
