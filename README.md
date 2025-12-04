@@ -15,11 +15,14 @@ A modern, responsive movie and TV show search application built with React and T
 
 ### Bonus Features Implemented
 
-- **Debounced Search**: 400ms debounce for optimal performance
+- **Debounced Search**: 500ms debounce for optimal performance
 - **Favorites System**: Add/remove favorites with localStorage persistence
-- **Responsive Design**: Optimized for mobile, tablet, and desktop
+- **Responsive Design**: Fully optimized for mobile (1 col), tablet (2-3 cols), and desktop (4-5 cols)
 - **Loading States**: Clear loading indicators for better UX
 - **Error Handling**: Graceful error messages for failed requests
+- **404 Page**: Custom Not Found page with navigation options
+- **Mobile Navigation**: Hamburger menu for responsive navigation
+- **Pagination**: Browse results across multiple pages
 
 ## Tech Stack
 
@@ -73,10 +76,11 @@ src/
 ├── components/          # Reusable React components
 │   ├── SearchBar.tsx
 │   ├── FilterSort.tsx
-│   ├── Pagenation.tsx
+│   ├── Pagination.tsx
 │   ├── MovieCard.tsx
 │   ├── MovieGrid.tsx
-│   └── MovieDetailsModal.tsx
+│   ├── MovieDetailsModal.tsx
+│   └── Navigation.tsx
 ├── hooks/              # Custom React hooks
 │   ├── useDebounce.ts
 │   └── useFavorites.ts
@@ -86,25 +90,40 @@ src/
 │   └── movie.ts
 ├── utils/              # Utility functions
 │   └── filterSort.ts
+├── pages/              # Page components
+│   ├── SearchPage.tsx
+│   ├── FavoritesPage.tsx
+│   └── NotFoundPage.tsx
 ├── App.tsx             # Main application component
 └── main.tsx            # Application entry point
 ```
 
-## Features Breakdown
+### Responsive Design
 
-### Search
+- **Mobile First Approach**: Starts with single column and scales up
+- **Grid Breakpoints**:
+  - Mobile: 1 column (< 640px)
+  - Tablet: 2-3 columns (640px - 1024px)
+  - Desktop: 4-5 columns (> 1024px)
+- **Adaptive Typography**: Font sizes scale across devices
+- **Adaptive Spacing**: Padding and margins adjust for screen size
+- **Touch-Friendly**: Larger buttons and spacing for mobile devices
+- **Hamburger Menu**: Mobile navigation menu that collapses on smaller screens
 
-- Search input with button or Enter key submission
-- Loading state during API calls
-- Error handling with user-friendly messages
-- Empty state for initial view
+### 404 Page
 
-### Results List
+- Custom not found page for invalid routes
+- Quick navigation buttons (Go Home, My Favorites)
+- Helpful suggestions for users
+- Fully responsive design
 
-- Responsive grid layout (2-5 columns based on screen size)
-- Hover effect: darkens poster and shows overlay with details
-- Favorite button on each card
-- "No results found" message when appropriate
+### Navigation
+
+- Fixed top navigation bar
+- Logo with responsive sizing
+- Responsive link layout
+- Mobile hamburger menu
+- Active route highlighting
 
 ### Details Modal
 
@@ -127,8 +146,8 @@ src/
 ### Favorites
 
 - Click heart icon to add/remove favorites
+- Dedicated favorites page to browse saved movies
 - Favorites stored in localStorage
-- Favorite count displayed in bottom-right corner
 - Favorites persist across sessions
 
 ## Notes & Assumptions
