@@ -23,6 +23,7 @@ A modern, responsive movie and TV show search application built with React and T
 - **404 Page**: Custom Not Found page with navigation options
 - **Mobile Navigation**: Hamburger menu for responsive navigation
 - **Pagination**: Browse results across multiple pages
+- **Scroll to Top Button**: Smooth scroll button appears after scrolling down 300px
 
 ## Tech Stack
 
@@ -95,7 +96,8 @@ src/
 │   ├── MovieCard.tsx
 │   ├── MovieGrid.tsx
 │   ├── MovieDetailsModal.tsx
-│   └── Navigation.tsx
+│   ├── Navigation.tsx
+│   └── ScrollToTop.tsx
 ├── hooks/              # Custom React hooks
 │   ├── useDebounce.ts
 │   └── useFavorites.ts
@@ -164,6 +166,14 @@ src/
 - Dedicated favorites page to browse saved movies
 - Favorites stored in localStorage
 - Favorites persist across sessions
+
+### Scroll to Top Button
+
+- Smooth scroll button appears after scrolling down 300px
+- Fixed position at bottom-right of the screen
+- Blue color with hover effects
+- Smooth animation on appearance/disappearance
+- Click to scroll to top with smooth behavior
 
 ## Notes & Assumptions
 
